@@ -1,0 +1,4 @@
+env/
+*.pyc
+.vscode/
+deploy_test/deploy_test/settings.py
