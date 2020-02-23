@@ -25,15 +25,15 @@ root_name/project_name/settings.py
 
 > Note: Every time changes is made to the file commit those files from the root directory.
 
-# Setting server to trigger the hook:
+# 4. Setting server to trigger the hook:
 - Setting git on server. Make sure git is installed or ``sudo apt-get install git``
 - Setting server to execute the git hooks.
 
 ## 4.1 Setting up git repo on server
-- SSH into server terminal: ``ssh root@ip``
+- SSH into server's terminal: ``ssh root@ip``
 - Create a directory on server and cd into it: ``mkdir <dir_name> && cd <dir_name>``
 - Create a directory for storing the project files: ``mkdir <deploy_dir_name>``. Files pushed will be saved on this directory.
-- Create a directory for storing git files ``cd <app_name>.git``.
+- Create a directory for storing git files ``mkdir <app_name>.git``.
 - CD into git folder: ``cd <app_name>.git`` 
 - Create a bare git repository: ``git init --bare``
 
@@ -44,7 +44,7 @@ root_name/project_name/settings.py
 
 ```bash
 #!/bin/bash
-TRAGET="/root/webuser/deploy-folder" # path to deploy folder created in step 4.1
+TRAGET="/root/webuser/deploy-folder" # path to <deploy_dir> folder created in step 4.1
 GIT_DIR="/home/webuser/www.git" # path to git directory created in step 4.1
 BRANCH="master"
 
@@ -66,8 +66,7 @@ done
 
 
 # 5. Setting up local machine:
-
-- Setting up ssh based authentication by creating ssh key so that you dont need to type passwordjangod each time you pull.
+- Setting up ssh based authentication by creating ssh key so that you dont need to type password each time you pull.
 - Create a remote url to point server's git file
 
 ## 5.1 Setting up SSH based authentication
@@ -81,11 +80,10 @@ done
 - View the remote thus created: ``git remote -v``
 
 
-
 # 6. Testing Deployment:
 - Make changes to file and add files: ``git add .``
 - Commit files: ``git commit -m `<commit message>``
-- Push to the remote live: ``git push <>``
-
-
-
+- Push to the remote live: ``git push <remote_name> master``.At this point file will be uploaded to server.
+- Copy settings.py file to serer: ``sudo scp settings.py user@ip:/project_name/settings.py/path/on/server``
+- Create virtual environment (step 2) on server, activate it and install dependencis from requirements.txt (``pip install -r requirements.txt``). Make sure server's IP(using ``ifconfig``)  is added to ``ALLOWED_HOST`` or just use ``ALLOWED_HOST = []``.
+- Run the django project on server ignoring direct console output: ``nohup python manage.py runserver <server_ip>:<port>``
