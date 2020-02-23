@@ -1,4 +1,4 @@
-**Deploy Django app to VPS with git hooks**
+# Deploy Django app to VPS with git hooks
 
 ## 1. Create a github repo and download it to the local machine:
 - Download repo: ``git clone <url>``
