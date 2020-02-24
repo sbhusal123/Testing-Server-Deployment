@@ -76,7 +76,7 @@ done
 
 
 ### 5.2 Create a remote url to point server's git file:
-- Create a remote: ``git remote add <remote_name> ssh://user@ip:/path/to/git_file_create_on_4.1``. Ex: ``git remote add live ssh://root@192.168.0.1:/root/django/git_file.sh``
+- Create a remote: ``git remote add <remote_name> ssh://user@ip:/path/to/git_file_create_on_4.1``. Ex: ``git remote add live ssh://root@192.168.0.1:/root/django/git_file.git``
 - View the remote thus created: ``git remote -v``
 
 
