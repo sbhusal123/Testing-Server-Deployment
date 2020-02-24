@@ -39,7 +39,7 @@ root_name/project_name/settings.py
 
 ### 4.2 Setting git hooks:
 - CD into hooks: ``cd hooks``. Hooks are events that gets triggered automatically by git when event(push, commit) occurs.
-- Create a post_receive hook. ``nano post_receive``, copy following bash code and modify TARGET and GITDIR vars.
+- Create a post_receive hook. ``nano post-receive``, copy following bash code and modify TARGET and GITDIR vars.
 [Script Source](https://stackoverflow.com/a/53084830/10901575)
 
 ```bash
@@ -62,7 +62,7 @@ done
 ```
 
 - Save(ctrl+o) and exit (ctrl+x)
-- Make the hook script executable for current user: ``chmod u+x post_receive``
+- Make the hook script executable for current user: ``chmod u+x post-receive``
 
 
 ## 5. Setting up local machine:
