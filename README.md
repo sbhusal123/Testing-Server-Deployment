@@ -85,5 +85,5 @@ done
 - Commit files: ``git commit -m `<commit message>``
 - Push to the remote live: ``git push <remote_name> master``.At this point file will be uploaded to server.
 - Copy settings.py file to serer: ``sudo scp settings.py user@ip:/project_name/settings.py/path/on/server``
-- Create virtual environment (step 2) on server, activate it and install dependencis from requirements.txt (``pip install -r requirements.txt``). Make sure server's IP(using ``ifconfig``)  is added to ``ALLOWED_HOST`` or just use ``ALLOWED_HOST = []``.
+- Create virtual environment (step 2) on server, activate it and install dependencis from requirements.txt (``pip install -r requirements.txt``). Make sure server's IP(using ``ifconfig``)  is added to ``ALLOWED_HOST`` or just use ``ALLOWED_HOST = ['*']``.
 - Run the django project on server ignoring direct console output: ``nohup python manage.py runserver <server_ip>:<port>``
